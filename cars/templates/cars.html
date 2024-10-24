@@ -92,6 +92,15 @@
     button[type="submit"]:hover {
         background-color: #108eb8;
     }
+    a{
+        font-size: 18px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #0096c7;
+    }
 </style>
 
 <form method="get" action="{% url 'cars_list' %}">
@@ -102,8 +111,13 @@
 <div class="car-grid">
     {% if cars %}
     {% for car in cars%}
+    <a href="{% url 'car_detail' car.pk %}">
     <div class="car-card">
+        {% if car.photo %}
         <img src="{{ car.photo.url }}" alt="{{ car.model }} - {{ car.brand }}">
+        {% else %}
+         <p class=""no-photo>Foto não disponivel</p>
+        {% endif %}
         <h2>{{ car.brand }} {{ car.model }}</h2>
         <p>{{ car.factory_year }} - R$ {{ car.value }}</p>
     </div>
