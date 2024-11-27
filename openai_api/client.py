@@ -8,8 +8,7 @@ client = OpenAI(
 
 def get_car_ai_description(model, brand, year):
     message = ''''
-    Me mostre uma descrição de venda para o carro {} {} {} em apenas 250 caracteres. Fale coisas específicas desse modelo.
-    Descreva especificações técnicas desse modelo de carro.
+    Me mostre uma descrição de venda para o carro {} {} {} em apenas 200 caracteres. Descreva coisas específicas desse modelo.
     '''
     message = message.format(brand, model, year)
     response = client.chat.completions.create(
