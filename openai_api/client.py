@@ -2,7 +2,7 @@ from openai import OpenAI
 
 
 client = OpenAI(
-    api_key='Sua APIKEY'
+    api_key='Your APIKEY'
 )
 
 
